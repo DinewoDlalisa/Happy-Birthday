@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    background: radial-gradient(circle at center, #1e1e1e, #0b0b0b);
+    text-align: center;
+    overflow-y: auto; /* Allow vertical scrolling */
+  }
+  
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('images/particles.png') repeat;
+    opacity: 0.1;
+    animation: float 20s linear infinite;
+  }
+  
+  .landing {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 90%; /* Adjusted for smaller screens */
+    margin: 20px auto;
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+    height: 100vh; /* Set a fixed height for the landing page */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+  }
+  
+  h1, h2 {
+    font-size: 2.2rem;
+    color: #ff6363;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #f1f1f1;
+  }
+  
+  button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #fff;
+    background-color: #ff6363;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 15px rgba(255, 99, 99, 0.4);
+    animation: pulse 1.5s infinite;
+  }
+  
+  button:hover {
+    background-color: #ff8e8e;
+    transform: scale(1.05);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .gallery {
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .photos {
+    display: flex; /* Flexbox for responsive layout */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Wraps images on smaller screens */
+  }
+  
+  .photos img {
+    width: 100%; /* Full width for responsiveness */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 150px; /* Max width for each photo */
+    border-radius: 10px;
+    transition: transform 0.3s;
+    margin: 5px; /* Spacing between images */
+  }
+  
+  .photos img:hover {
+    transform: scale(1.1);
+  }
+  
+  .active {
+    display: block; /* Show only the active photo */
+  }
+  
+  .itachi-quote {
+    margin-top: 30px;
+    font-style: italic;
+    color: #ff6363;
+    padding: 15px; /* Add padding for better spacing */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly opaque background for visibility */
+    border-radius: 10px; /* Round corners */
+    max-width: 90%; /* Ensure it fits on smaller screens */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 600px) {
+    h1, h2 {
+      font-size: 1.8rem; /* Adjusted font size for mobile */
+    }
+  
+    button {
+      padding: 10px 20px; /* Smaller button size */
+      font-size: 1em; /* Smaller font size */
+    }
+  
+    .photos img {
+      max-width: 100px; /* Smaller max width for mobile */
+    }
+  
+    .itachi-quote {
+      font-size: 0.9em; /* Slightly smaller font size for mobile */
+    }
+  }
+  
+  
+  
